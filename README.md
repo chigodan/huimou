@@ -4,8 +4,6 @@
 
 本仓库对应**水平 360° 连续舵机速度控制、俯仰 180° 舵机位置控制**版本。
 
-![系统实物](docs/images/system_photo.jpeg)
-
 ## 主要功能
 
 - 六种视频模式：摄像头原图、边缘检测、灰度、区域填充、OSD、圆形目标跟踪。
@@ -41,9 +39,6 @@ fpga/
 pc_ui/
   src/               C# 控制台和离线测试源码
   tools/             编译与检查脚本
-docs/
-  images/            实物、控制台截图和流程图
-  慧眸智能视觉跟踪系统技术文档.docx
 ```
 
 ## 打开 FPGA 工程
@@ -73,8 +68,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -File pc_ui/tools/Build.ps1
 编译后，双击 `pc_ui/Launch.cmd` 打开串口控制台，或双击 `pc_ui/Demo.cmd` 进入离线演示。演示模式不打开真实串口。
 
 选择设备对应的 COM 口，波特率为 115200。等待 FPGA 确认模式或图像设置后，界面显示实际状态。AWB、AE 默认开启，显示亮度默认 0；关闭 AE 会保持最近一次曝光与增益。
-
-![电脑控制台](docs/images/pc_ui.png)
 
 更详细的说明见 [控制台使用说明](pc_ui/README_UI.md) 和 [图像调节与串口协议](fpga/doc/IMAGE_AUTO_UART.md)。
 
@@ -108,12 +101,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -File pc_ui/tools/Test-Ui.ps1
 
 控制台脚本运行离线协议与界面检查，并生成普通/紧凑窗口预览，不连接实板串口。仿真及界面检查的生成文件位于被忽略的构建目录。
 
-## 技术文档与流程图
-
-- [技术文档](docs/慧眸智能视觉跟踪系统技术文档.docx)
-- [设计流程](docs/images/design_flow.png)
-- [系统总体框图](docs/images/system_overview.png)
-- [AWB / AE 流程](docs/images/awb_ae_flow.png)
-- [圆形检测与双轴控制流程](docs/images/tracking_flow.png)
+## 视频延迟
 
 OSD 中的 `LATENCY` 表示同一视频帧从内部采集起点到 HDMI 首像素输出的时间，不包含传感器曝光和显示器成像时间。
