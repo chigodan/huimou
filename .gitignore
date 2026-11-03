@@ -1,0 +1,30 @@
+# TD build outputs and local tool state
+**/*_Runs/
+**/td_project/log/
+**/td_project/al_ip/
+**/.IpToolIpDataBackupDir*/
+**/.recent_user_depot.ini
+*.log
+*.logw
+*.dmp
+*.timingsummary
+*.bit
+
+# Simulator and UI build products
+/fpga/sim/build/
+/pc_ui/bin/
+/pc_ui/verification/
+*.vvp
+*.vcd
+*.fst
+**/.ui_seq_*.txt
+
+# Local editor/OS and Word temporary files
+.verification/
+__pycache__/
+*.pyc
+.vs/
+.idea/
+Thumbs.db
+Desktop.ini
+~$*

@@ -1,0 +1,6 @@
+# Preserve FPGA/IP sources exactly, including their existing line endings.
+* -text
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
